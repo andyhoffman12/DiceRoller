@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace DiceRollerWinForms
 {
@@ -18,5 +19,6 @@ namespace DiceRollerWinForms
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DiceRollerUserControl());
         }
+
     }
 }

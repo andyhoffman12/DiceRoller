@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="DiceRoller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RollDice.cs" />
     <EmbeddedResource Include="DiceRollerUserControl.resx">
       <DependentUpon>DiceRollerUserControl.cs</DependentUpon>
     </EmbeddedResource>
