@@ -63,13 +63,11 @@ namespace DiceRollerWinForms
         private void subtractDiceButton_Click(object sender, EventArgs e)
         {
             currentNumDice--;
-            diceToRollBox.TextChanged();
         }
 
         private void addDiceButton_Click(object sender, EventArgs e)
         {
             currentNumDice++;
-            diceToRollBox.Refresh();
         }
 
         private void RollDiceButton_Click(object sender, EventArgs e)
@@ -96,8 +94,8 @@ namespace DiceRollerWinForms
 
         private void numDiceToRollLabel_Click(object sender, EventArgs e)
         {
-
         }
+
 
         private void resultView_SelectedIndexChanged(object sender, EventArgs e)
         {

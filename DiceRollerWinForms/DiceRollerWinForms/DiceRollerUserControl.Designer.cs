@@ -354,6 +354,18 @@
         private System.Windows.Forms.ColumnHeader GlitchHeader;
         private System.Windows.Forms.ColumnHeader CriticalGlitchHeader;
         private System.Windows.Forms.ColumnHeader RollTypeHeader;
+
+        public string numDiceToRollLabel_Text
+        {
+            get
+            {
+                return this.numDiceToRollLabel.Text;
+            }
+            set
+            {
+                numDiceToRollLabel.Text = value;
+            }
+        }
     }
 }
 
