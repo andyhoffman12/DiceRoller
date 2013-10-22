@@ -9,20 +9,21 @@ namespace DiceRollerWinForms
     class Roll
     {
         public string rawRoll { get; set; }
-        public Int32 numHits {get; set;}
+        public int numHits {get; set;}
         public bool isGlitch {get; set;}
         public bool isCritGlitch{get; set;}
-        public Int32 lastNumDiceRolled { get; set; }
-        public Int32 lastNumHitsRolled { get; set; }
+        public int lastNumDiceRolled { get; set; }
+        public int lastNumHitsRolled { get; set; }
         public bool lastRollWasEdge { get; set; }
         
 
-        internal void FinalRollResults(Int32[] resultsRaw, Int32 numDice)
+        internal void FinalRollResults(int[] resultsRaw, int numDice)
         {
-            Int32[] rollResults = new Int32[6];
+            var rollResults = new int[6];
 
-            for (Int32 i = 0; i < numDice; i++)
+            for (int i = 0; i < numDice; i++)
             {
+                //is this legit?
                 switch(resultsRaw[i])
                 {
                     case 1:
@@ -46,8 +47,9 @@ namespace DiceRollerWinForms
                 }
             }
 
-            numHits = rollResults[4] + rollResults[5];
-            //If more than half the dice you rolled show a one, then you’ve got problems. This is called a glitch.
+            numHits = rollResults[4] + rollResults[5]; //hits are the number of dice that rolld a 5 or 6
+            //If more than half the dice you rolled show a one, then you’ve got problems. 
+            //This is called a glitch.
             if ((numDice / 2) < rollResults[0])
             {
                 this.isGlitch = true;
@@ -70,16 +72,16 @@ namespace DiceRollerWinForms
             isCritGlitch = false;
         }
     }
-    class RollDice : Roll
+    class Dice : Roll
     {
-        private Int32 const_Delay = 0;
+        private int const_Delay = 0;
 
         private RNGCryptoServiceProvider RNGProvider = new RNGCryptoServiceProvider();
 
-        public Roll RollTheDice(Int32 numberOfDiceToRoll, bool edgeRoll, bool reRollEdge)
+        public Roll RollTheDice(int numberOfDiceToRoll, bool edgeRoll, bool reRollEdge)
         {
-            Roll currentRoll = new Roll();
-            Int32[] results = new Int32[numberOfDiceToRoll];
+            var currentRoll = new Roll();
+            var results = new int[numberOfDiceToRoll];
 
 
 
@@ -99,17 +101,16 @@ namespace DiceRollerWinForms
 
             return currentRoll;
         }
-        private Int32 RNGDiceRoll(RNGCryptoServiceProvider Provider)
+        private int RNGDiceRoll(RNGCryptoServiceProvider Provider)
         {
             byte[] arr = new byte[4];
-            Int32 rand = 0;
-            do
+            int rand = 0;
+            while (rand < 1)
             {
                 Provider.GetBytes(arr);
                 rand = BitConverter.ToInt32(arr, 0);
             }
-            while (rand < 1);
-            Int32 roll = (rand % 6) + 1;
+            int roll = (rand % 6) + 1;
             return roll;
         }
     }

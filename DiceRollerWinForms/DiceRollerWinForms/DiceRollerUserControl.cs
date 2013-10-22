@@ -12,119 +12,87 @@ namespace DiceRollerWinForms
 {
     public partial class DiceRollerUserControl : Form
     {
-        private RollDice diceRoll = new RollDice();
-        private Roll currentRoll = new Roll();
-        private Int32 rollNumber = 1;
-        private Int32 currentNumDice = 0;
-        private Int32 lastNumHit = 0;
-        private Int32 lastNumDiceRolled = 0;
-        private string numDiceText = "Number of Dice";
+        private Dice _diceRoll = new Dice();
+        private Roll _currentRoll = new Roll();
+        private int _rollNumber = 1;
+        private int _currentNumDice = 1;
 
         public DiceRollerUserControl()
         {
             InitializeComponent();
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void mainSplitContainer_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void diceToRollBox_TextChanged(object sender, EventArgs e)
         {
-            if (Int32.TryParse(diceToRollBox.Text, out currentNumDice))
+            if (int.TryParse(diceToRollBox.Text, out _currentNumDice))
             {
-                currentNumDice = Int32.Parse(diceToRollBox.Text);
+                _currentNumDice = int.Parse(diceToRollBox.Text);
             }
             else
             {
-                currentNumDice = 0;
+                _currentNumDice = 1;
             }
-            diceToRollBox.Text = currentNumDice.ToString();
+            diceToRollBox.Text = _currentNumDice.ToString();
         }
 
         private void subtractDiceButton_Click(object sender, EventArgs e)
         {
-            if (currentNumDice > 1)
+            if (_currentNumDice > 1)
             {
-                currentNumDice--;
+                _currentNumDice--;
             }
-            diceToRollBox.Text = currentNumDice.ToString();
+            diceToRollBox.Text = _currentNumDice.ToString();
         }
 
         private void addDiceButton_Click(object sender, EventArgs e)
         {
-            if (currentNumDice < 100)
+            if (_currentNumDice < 100)
             {
-                currentNumDice++;
+                _currentNumDice++;
             }
-            diceToRollBox.Text = currentNumDice.ToString();
+            diceToRollBox.Text = _currentNumDice.ToString();
         }
 
         private void RollDiceButton_Click(object sender, EventArgs e)
         {
-            currentRoll = diceRoll.RollTheDice(currentNumDice, false, false);
-            ListViewItem i = new ListViewItem(rollNumber.ToString());
-            i.SubItems.Add(currentRoll.numHits.ToString());
-            i.SubItems.Add(currentRoll.rawRoll);
-            i.SubItems.Add(currentRoll.isGlitch.ToString());
-            i.SubItems.Add(currentRoll.isCritGlitch.ToString());
+            _currentRoll = _diceRoll.RollTheDice(_currentNumDice, false, false);
+            ListViewItem i = new ListViewItem(_rollNumber.ToString());
+            i.SubItems.Add(_currentRoll.numHits.ToString());
+            i.SubItems.Add(_currentRoll.rawRoll);
+            i.SubItems.Add(_currentRoll.isGlitch.ToString());
+            i.SubItems.Add(_currentRoll.isCritGlitch.ToString());
             resultView.Items.Add(i);
-            rollNumber++;
+            _rollNumber++;
         }
 
         private void RollDiceWithEdgeButton_Click(object sender, EventArgs e)
         {
-            currentRoll = diceRoll.RollTheDice(currentNumDice, false, false);
-            ListViewItem i = new ListViewItem(rollNumber.ToString());
-            i.SubItems.Add(currentRoll.numHits.ToString());
-            i.SubItems.Add(currentRoll.rawRoll);
-            i.SubItems.Add(currentRoll.isGlitch.ToString());
-            i.SubItems.Add(currentRoll.isCritGlitch.ToString());
+            //woo this totally does the same thing as a normal roll right now
+            //this wneeds to re roll the dice from the previous roll in particular any dice that were not a hit(5 or 6)
+            _currentRoll = _diceRoll.RollTheDice(_currentNumDice, false, false);
+            ListViewItem i = new ListViewItem(_rollNumber.ToString());
+            i.SubItems.Add(_currentRoll.numHits.ToString());
+            i.SubItems.Add(_currentRoll.rawRoll);
+            i.SubItems.Add(_currentRoll.isGlitch.ToString());
+            i.SubItems.Add(_currentRoll.isCritGlitch.ToString());
             resultView.Items.Add(i);
-            rollNumber++;
+            _rollNumber++;
         }
 
         private void reRollDiceWithEdgeButton_Click(object sender, EventArgs e)
         {
-            currentRoll = diceRoll.RollTheDice(currentNumDice, false, false);
-            ListViewItem i = new ListViewItem(rollNumber.ToString());
-            i.SubItems.Add(currentRoll.numHits.ToString());
-            i.SubItems.Add(currentRoll.rawRoll);
-            i.SubItems.Add(currentRoll.isGlitch.ToString());
-            i.SubItems.Add(currentRoll.isCritGlitch.ToString());
+            //woo this totally does the same thing as a normal roll right now
+            //need to think how to do this this is a normal dice roll with exploding sixes
+            //roll the set of dice then roll any sixes again untill no more sixes left.
+            //totall all of the 5's and 6's from all the rolls to get your hits
+            _currentRoll = _diceRoll.RollTheDice(_currentNumDice, false, false);
+            ListViewItem i = new ListViewItem(_rollNumber.ToString());
+            i.SubItems.Add(_currentRoll.numHits.ToString());
+            i.SubItems.Add(_currentRoll.rawRoll);
+            i.SubItems.Add(_currentRoll.isGlitch.ToString());
+            i.SubItems.Add(_currentRoll.isCritGlitch.ToString());
             resultView.Items.Add(i);
-            rollNumber++;
-        }
-
-        private void numDiceToRollLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-
-        private void resultView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            _rollNumber++;
         }
     }
 }

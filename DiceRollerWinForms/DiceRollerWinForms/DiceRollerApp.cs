@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace DiceRollerWinForms
 {
-    static class DiceRoller
+    static class DiceRollerApp
     {
         /// <summary>
         /// The main entry point for the application.
