@@ -46,7 +46,7 @@
             this.ResultsHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GlitchHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CriticalGlitchHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +64,7 @@
             this.subSplitMayChangeLater.Panel1.SuspendLayout();
             this.subSplitMayChangeLater.Panel2.SuspendLayout();
             this.subSplitMayChangeLater.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollTypeHeader
@@ -271,17 +271,18 @@
             this.CriticalGlitchHeader.Text = "Critical Glitch";
             this.CriticalGlitchHeader.Width = 80;
             // 
-            // menuStrip1
+            // MenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.menuStrip1.Size = new System.Drawing.Size(1338, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.MenuStrip.Size = new System.Drawing.Size(1338, 24);
+            this.MenuStrip.TabIndex = 1;
+            this.MenuStrip.Text = "menuStrip1";
+            this.MenuStrip.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -323,11 +324,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1338, 607);
             this.Controls.Add(this.mainSplitContainer);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.MenuStrip);
+            this.MainMenuStrip = this.MenuStrip;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "DiceRollerUserControl";
-            this.Text = "Form1";
+            this.Text = "ShadowRunDiceRoller";
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
@@ -342,8 +343,8 @@
             this.subSplitMayChangeLater.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subSplitMayChangeLater)).EndInit();
             this.subSplitMayChangeLater.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,7 +354,6 @@
 
         private System.Windows.Forms.SplitContainer mainSplitContainer;
         private System.Windows.Forms.ListView resultView;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -375,6 +375,7 @@
         public System.Windows.Forms.Label numDiceToRollLabel;
         internal System.Windows.Forms.TextBox diceToRollBox;
         private System.Windows.Forms.ColumnHeader RollTypeHeader;
+        private System.Windows.Forms.MenuStrip MenuStrip;
 
         public string numDiceToRollLabel_Text
         {

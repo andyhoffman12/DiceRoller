@@ -7,15 +7,15 @@
     <ProjectGuid>{9BCF40C7-6F17-46CF-841F-29A71AA2D0C5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DiceRollerWinForms</RootNamespace>
-    <AssemblyName>DiceRollerWinForms</AssemblyName>
+    <RootNamespace>ShadowRunDiceRoller</RootNamespace>
+    <AssemblyName>ShadowRunDiceRoller</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\Andy\Documents\GitHub\DiceRoller\Installer\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
@@ -23,7 +23,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>https://github.com/andyhoffman12/ShadowRunDiceRoller/tree/master/Installer/</UpdateUrl>
-    <ApplicationRevision>1</ApplicationRevision>
+    <SupportUrl>https://github.com/andyhoffman12/ShadowRunDiceRoller/issues</SupportUrl>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>ShadowRunDiceRoller</ProductName>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,6 +63,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DiceRollerWinForms.ShadowRunDiceRollerApp</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -79,7 +85,7 @@
     <Compile Include="DiceRollerUserControl.Designer.cs">
       <DependentUpon>DiceRollerUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiceRollerApp.cs" />
+    <Compile Include="ShadowRunDiceRollerApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dice.cs" />
     <EmbeddedResource Include="DiceRollerUserControl.resx">
@@ -93,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DiceRollerWinForms_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
