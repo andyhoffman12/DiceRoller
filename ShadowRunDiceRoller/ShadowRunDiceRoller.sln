@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiceRollerWinForms", "DiceRollerWinForms\DiceRollerWinForms.csproj", "{9BCF40C7-6F17-46CF-841F-29A71AA2D0C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadowRunDiceRoller", "DiceRollerWinForms\ShadowRunDiceRoller.csproj", "{9BCF40C7-6F17-46CF-841F-29A71AA2D0C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
