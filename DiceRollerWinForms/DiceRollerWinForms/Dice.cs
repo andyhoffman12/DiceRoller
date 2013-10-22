@@ -21,7 +21,7 @@ namespace DiceRollerWinForms
         {
             var rollResults = new int[6];
 
-            for (int i = 0; i < numDice; i++)
+            for (var i = 0; i < numDice; i++)
             {
                 //is this legit?
                 switch(resultsRaw[i])
@@ -85,7 +85,7 @@ namespace DiceRollerWinForms
 
 
 
-            for (int i = 0; i < numberOfDiceToRoll; i++)
+            for (var i = 0; i < numberOfDiceToRoll; i++)
             {
                 System.Threading.Thread.Sleep(const_Delay);
                 results[i] = RNGDiceRoll(RNGProvider);

@@ -31,13 +31,13 @@
             this.RollTypeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.leftSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.controlsLayout = new System.Windows.Forms.TableLayoutPanel();
             this.addDiceButton = new System.Windows.Forms.Button();
             this.rollDiceButton = new System.Windows.Forms.Button();
             this.rollDiceWithEdgeButton = new System.Windows.Forms.Button();
             this.reRollDiceWithEdgeButton = new System.Windows.Forms.Button();
             this.subtractDiceButton = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.subSplitMayChangeLater = new System.Windows.Forms.SplitContainer();
             this.numDiceToRollLabel = new System.Windows.Forms.Label();
             this.diceToRollBox = new System.Windows.Forms.TextBox();
             this.resultView = new System.Windows.Forms.ListView();
@@ -59,11 +59,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.leftSplitContainer)).BeginInit();
             this.leftSplitContainer.Panel2.SuspendLayout();
             this.leftSplitContainer.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.controlsLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subSplitMayChangeLater)).BeginInit();
+            this.subSplitMayChangeLater.Panel1.SuspendLayout();
+            this.subSplitMayChangeLater.Panel2.SuspendLayout();
+            this.subSplitMayChangeLater.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,33 +102,33 @@
             // 
             // leftSplitContainer.Panel2
             // 
-            this.leftSplitContainer.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.leftSplitContainer.Panel2.Controls.Add(this.controlsLayout);
             this.leftSplitContainer.Size = new System.Drawing.Size(499, 583);
             this.leftSplitContainer.SplitterDistance = 440;
             this.leftSplitContainer.TabIndex = 1;
             // 
-            // tableLayoutPanel1
+            // controlsLayout
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.addDiceButton, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.rollDiceButton, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.rollDiceWithEdgeButton, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.reRollDiceWithEdgeButton, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.subtractDiceButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(495, 135);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.controlsLayout.ColumnCount = 3;
+            this.controlsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.controlsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.controlsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.controlsLayout.Controls.Add(this.addDiceButton, 2, 0);
+            this.controlsLayout.Controls.Add(this.rollDiceButton, 0, 1);
+            this.controlsLayout.Controls.Add(this.rollDiceWithEdgeButton, 1, 1);
+            this.controlsLayout.Controls.Add(this.reRollDiceWithEdgeButton, 2, 1);
+            this.controlsLayout.Controls.Add(this.subtractDiceButton, 0, 0);
+            this.controlsLayout.Controls.Add(this.subSplitMayChangeLater, 1, 0);
+            this.controlsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlsLayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.controlsLayout.Location = new System.Drawing.Point(0, 0);
+            this.controlsLayout.Name = "controlsLayout";
+            this.controlsLayout.RowCount = 2;
+            this.controlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.controlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.controlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.controlsLayout.Size = new System.Drawing.Size(495, 135);
+            this.controlsLayout.TabIndex = 0;
             // 
             // addDiceButton
             // 
@@ -187,23 +187,23 @@
             this.subtractDiceButton.UseVisualStyleBackColor = true;
             this.subtractDiceButton.Click += new System.EventHandler(this.subtractDiceButton_Click);
             // 
-            // splitContainer1
+            // subSplitMayChangeLater
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(168, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.subSplitMayChangeLater.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subSplitMayChangeLater.Location = new System.Drawing.Point(168, 3);
+            this.subSplitMayChangeLater.Name = "subSplitMayChangeLater";
+            this.subSplitMayChangeLater.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // subSplitMayChangeLater.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.numDiceToRollLabel);
+            this.subSplitMayChangeLater.Panel1.Controls.Add(this.numDiceToRollLabel);
             // 
-            // splitContainer1.Panel2
+            // subSplitMayChangeLater.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.diceToRollBox);
-            this.splitContainer1.Size = new System.Drawing.Size(159, 61);
-            this.splitContainer1.SplitterDistance = 25;
-            this.splitContainer1.TabIndex = 7;
+            this.subSplitMayChangeLater.Panel2.Controls.Add(this.diceToRollBox);
+            this.subSplitMayChangeLater.Size = new System.Drawing.Size(159, 61);
+            this.subSplitMayChangeLater.SplitterDistance = 25;
+            this.subSplitMayChangeLater.TabIndex = 7;
             // 
             // numDiceToRollLabel
             // 
@@ -335,13 +335,13 @@
             this.leftSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.leftSplitContainer)).EndInit();
             this.leftSplitContainer.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.controlsLayout.ResumeLayout(false);
+            this.subSplitMayChangeLater.Panel1.ResumeLayout(false);
+            this.subSplitMayChangeLater.Panel1.PerformLayout();
+            this.subSplitMayChangeLater.Panel2.ResumeLayout(false);
+            this.subSplitMayChangeLater.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subSplitMayChangeLater)).EndInit();
+            this.subSplitMayChangeLater.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -360,7 +360,7 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.SplitContainer leftSplitContainer;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel controlsLayout;
         private System.Windows.Forms.Button addDiceButton;
         private System.Windows.Forms.Button rollDiceButton;
         private System.Windows.Forms.Button rollDiceWithEdgeButton;
@@ -371,7 +371,7 @@
         private System.Windows.Forms.ColumnHeader ResultsHeader;
         private System.Windows.Forms.ColumnHeader GlitchHeader;
         private System.Windows.Forms.ColumnHeader CriticalGlitchHeader;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer subSplitMayChangeLater;
         public System.Windows.Forms.Label numDiceToRollLabel;
         internal System.Windows.Forms.TextBox diceToRollBox;
         private System.Windows.Forms.ColumnHeader RollTypeHeader;
