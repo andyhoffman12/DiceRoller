@@ -12,6 +12,9 @@ namespace DiceRollerWinForms
         public Int32 numHits {get; set;}
         public bool isGlitch {get; set;}
         public bool isCritGlitch{get; set;}
+        public Int32 lastNumDiceRolled { get; set; }
+        public Int32 lastNumHitsRolled { get; set; }
+        public bool lastRollWasEdge { get; set; }
 
         internal void FinalRollResults(Int32[] resultsRaw, Int32 numDice)
         {
@@ -70,17 +73,26 @@ namespace DiceRollerWinForms
     {
         private RNGCryptoServiceProvider RNGProvider = new RNGCryptoServiceProvider();
 
-        public Roll RollTheDice(Int32 numberOfDiceToRoll)
+        public Roll RollTheDice(Int32 numberOfDiceToRoll, bool edgeRoll, bool reRollEdge)
         {
             Roll currentRoll = new Roll();
             Int32[] results = new Int32[numberOfDiceToRoll];
+
+
+
             for (int i = 0; i < numberOfDiceToRoll; i++)
             {
-                System.Threading.Thread.Sleep(8);
+                System.Threading.Thread.Sleep(16);
                 results[i] = RNGDiceRoll(RNGProvider);
             }
 
             currentRoll.FinalRollResults(results, numberOfDiceToRoll);
+            currentRoll.lastNumDiceRolled = numberOfDiceToRoll;
+            currentRoll.lastNumHitsRolled = currentRoll.numHits; 
+            if (edgeRoll) 
+            {
+                lastRollWasEdge = true;
+            }
 
             return currentRoll;
         }

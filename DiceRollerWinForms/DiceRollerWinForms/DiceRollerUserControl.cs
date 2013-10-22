@@ -16,6 +16,8 @@ namespace DiceRollerWinForms
         private Roll currentRoll = new Roll();
         private Int32 rollNumber = 1;
         private Int32 currentNumDice = 0;
+        private Int32 lastNumHit = 0;
+        private Int32 lastNumDiceRolled = 0;
 
         public DiceRollerUserControl()
         {
@@ -57,22 +59,25 @@ namespace DiceRollerWinForms
             {
                 currentNumDice = 0;
             }
+            numDiceToRollLabel.Text = "Number of Dice: " + currentNumDice.ToString();
             diceToRollBox.Text = currentNumDice.ToString();
         }
 
         private void subtractDiceButton_Click(object sender, EventArgs e)
         {
             currentNumDice--;
+            numDiceToRollLabel.Text = "Number of Dice: " + currentNumDice.ToString();
         }
 
         private void addDiceButton_Click(object sender, EventArgs e)
         {
             currentNumDice++;
+            numDiceToRollLabel.Text = "Number of Dice: " + currentNumDice.ToString();
         }
 
         private void RollDiceButton_Click(object sender, EventArgs e)
         {
-            currentRoll = diceRoll.RollTheDice(currentNumDice);
+            currentRoll = diceRoll.RollTheDice(currentNumDice, false, false);
             ListViewItem i = new ListViewItem(rollNumber.ToString());
             i.SubItems.Add(currentRoll.numHits.ToString());
             i.SubItems.Add(currentRoll.rawRoll);
@@ -84,12 +89,26 @@ namespace DiceRollerWinForms
 
         private void RollDiceWithEdgeButton_Click(object sender, EventArgs e)
         {
-            //magic code needed...
+            currentRoll = diceRoll.RollTheDice(currentNumDice, false, false);
+            ListViewItem i = new ListViewItem(rollNumber.ToString());
+            i.SubItems.Add(currentRoll.numHits.ToString());
+            i.SubItems.Add(currentRoll.rawRoll);
+            i.SubItems.Add(currentRoll.isGlitch.ToString());
+            i.SubItems.Add(currentRoll.isCritGlitch.ToString());
+            resultView.Items.Add(i);
+            rollNumber++;
         }
 
         private void reRollDiceWithEdgeButton_Click(object sender, EventArgs e)
         {
-            //even more magic needed
+            currentRoll = diceRoll.RollTheDice(currentNumDice, false, false);
+            ListViewItem i = new ListViewItem(rollNumber.ToString());
+            i.SubItems.Add(currentRoll.numHits.ToString());
+            i.SubItems.Add(currentRoll.rawRoll);
+            i.SubItems.Add(currentRoll.isGlitch.ToString());
+            i.SubItems.Add(currentRoll.isCritGlitch.ToString());
+            resultView.Items.Add(i);
+            rollNumber++;
         }
 
         private void numDiceToRollLabel_Click(object sender, EventArgs e)
