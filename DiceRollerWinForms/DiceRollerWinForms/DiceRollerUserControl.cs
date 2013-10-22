@@ -18,6 +18,7 @@ namespace DiceRollerWinForms
         private Int32 currentNumDice = 0;
         private Int32 lastNumHit = 0;
         private Int32 lastNumDiceRolled = 0;
+        private string numDiceText = "Number of Dice";
 
         public DiceRollerUserControl()
         {
@@ -59,20 +60,25 @@ namespace DiceRollerWinForms
             {
                 currentNumDice = 0;
             }
-            numDiceToRollLabel.Text = "Number of Dice: " + currentNumDice.ToString();
             diceToRollBox.Text = currentNumDice.ToString();
         }
 
         private void subtractDiceButton_Click(object sender, EventArgs e)
         {
-            currentNumDice--;
-            numDiceToRollLabel.Text = "Number of Dice: " + currentNumDice.ToString();
+            if (currentNumDice > 1)
+            {
+                currentNumDice--;
+            }
+            diceToRollBox.Text = currentNumDice.ToString();
         }
 
         private void addDiceButton_Click(object sender, EventArgs e)
         {
-            currentNumDice++;
-            numDiceToRollLabel.Text = "Number of Dice: " + currentNumDice.ToString();
+            if (currentNumDice < 100)
+            {
+                currentNumDice++;
+            }
+            diceToRollBox.Text = currentNumDice.ToString();
         }
 
         private void RollDiceButton_Click(object sender, EventArgs e)

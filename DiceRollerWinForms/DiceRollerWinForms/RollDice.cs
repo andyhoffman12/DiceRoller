@@ -15,6 +15,7 @@ namespace DiceRollerWinForms
         public Int32 lastNumDiceRolled { get; set; }
         public Int32 lastNumHitsRolled { get; set; }
         public bool lastRollWasEdge { get; set; }
+        
 
         internal void FinalRollResults(Int32[] resultsRaw, Int32 numDice)
         {
@@ -71,6 +72,8 @@ namespace DiceRollerWinForms
     }
     class RollDice : Roll
     {
+        private Int32 const_Delay = 0;
+
         private RNGCryptoServiceProvider RNGProvider = new RNGCryptoServiceProvider();
 
         public Roll RollTheDice(Int32 numberOfDiceToRoll, bool edgeRoll, bool reRollEdge)
@@ -82,7 +85,7 @@ namespace DiceRollerWinForms
 
             for (int i = 0; i < numberOfDiceToRoll; i++)
             {
-                System.Threading.Thread.Sleep(16);
+                System.Threading.Thread.Sleep(const_Delay);
                 results[i] = RNGDiceRoll(RNGProvider);
             }
 
