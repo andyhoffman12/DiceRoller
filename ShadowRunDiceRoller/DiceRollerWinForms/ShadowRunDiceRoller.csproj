@@ -26,7 +26,7 @@
     <SupportUrl>https://github.com/andyhoffman12/ShadowRunDiceRoller/issues</SupportUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>ShadowRunDiceRoller</ProductName>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,10 +61,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DiceRollerWinForms.ShadowRunDiceRollerApp</StartupObject>
+    <StartupObject>ShadowRunDiceRoller.ShadowRunDiceRollerApp</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -79,17 +79,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiceRollerUserControl.cs">
+    <Compile Include="DiceRollerUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiceRollerUserControl.Designer.cs">
-      <DependentUpon>DiceRollerUserControl.cs</DependentUpon>
+    <Compile Include="DiceRollerUserForm.Designer.cs">
+      <DependentUpon>DiceRollerUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShadowRunDiceRollerApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dice.cs" />
-    <EmbeddedResource Include="DiceRollerUserControl.resx">
-      <DependentUpon>DiceRollerUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="DiceRollerUserForm.resx">
+      <DependentUpon>DiceRollerUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

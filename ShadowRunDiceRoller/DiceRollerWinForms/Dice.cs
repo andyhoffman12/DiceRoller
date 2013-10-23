@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace DiceRollerWinForms
+namespace ShadowRunDiceRoller
 {
     class Roll
     {
+        private const int numSidesOnTheDice = 6;
         public string rawRoll { get; set; }
         public int numHits {get; set;}
         public bool isGlitch {get; set;}
@@ -15,11 +18,11 @@ namespace DiceRollerWinForms
         public int lastNumDiceRolled { get; set; }
         public int lastNumHitsRolled { get; set; }
         public bool lastRollWasEdge { get; set; }
-        
 
-        internal void FinalRollResults(int[] resultsRaw, int numDice)
+
+        public void FinalalizeRoll(int[] resultsRaw, int numDice)
         {
-            var rollResults = new int[6];
+            var rollResults = new int[numSidesOnTheDice];
 
             for (var i = 0; i < numDice; i++)
             {
@@ -74,7 +77,8 @@ namespace DiceRollerWinForms
     }
     class Dice : Roll
     {
-        private int const_Delay = 0;
+        private const int ConstDelay = 0;
+        private const int numSidesOnTheDice = 6;
 
         private RNGCryptoServiceProvider RNGProvider = new RNGCryptoServiceProvider();
 
@@ -87,11 +91,11 @@ namespace DiceRollerWinForms
 
             for (var i = 0; i < numberOfDiceToRoll; i++)
             {
-                System.Threading.Thread.Sleep(const_Delay);
+                System.Threading.Thread.Sleep(ConstDelay);
                 results[i] = RNGDiceRoll(RNGProvider);
             }
 
-            currentRoll.FinalRollResults(results, numberOfDiceToRoll);
+            currentRoll.FinalalizeRoll(results, numberOfDiceToRoll);
             currentRoll.lastNumDiceRolled = numberOfDiceToRoll;
             currentRoll.lastNumHitsRolled = currentRoll.numHits; 
             if (edgeRoll) 
@@ -101,16 +105,16 @@ namespace DiceRollerWinForms
 
             return currentRoll;
         }
-        private int RNGDiceRoll(RNGCryptoServiceProvider Provider)
+        private int RNGDiceRoll(RNGCryptoServiceProvider provider)
         {
-            byte[] arr = new byte[4];
-            int rand = 0;
+            var arr = new byte[4];
+            var rand = 0;
             while (rand < 1)
             {
-                Provider.GetBytes(arr);
+                provider.GetBytes(arr);
                 rand = BitConverter.ToInt32(arr, 0);
             }
-            int roll = (rand % 6) + 1;
+            var roll = (rand % numSidesOnTheDice) + 1;
             return roll;
         }
     }

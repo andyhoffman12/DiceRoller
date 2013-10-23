@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
-namespace DiceRollerWinForms
+namespace ShadowRunDiceRoller
 {
     static class ShadowRunDiceRollerApp
     {
@@ -18,7 +18,7 @@ namespace DiceRollerWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DiceRollerUserControl());
+            Application.Run(new DiceRollerUserForm());
         }
 
     }
